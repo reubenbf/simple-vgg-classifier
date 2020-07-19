@@ -11,7 +11,7 @@ st.write("""
 import streamlit as st
 import os
 
-def file_selector(folder_path='.'):
+def file_selector(folder_path='./images'):
     filenames = os.listdir(folder_path)
     selected_filename = st.selectbox('Select your Image', filenames)
     return os.path.join(folder_path, selected_filename)
@@ -25,7 +25,7 @@ st.write('You selected `%s`' % filename)
 
 if filename:
 	img = Image.open(filename)
-	st.image(img, caption="Your Image")
+	st.image(img, caption="Your Image", use_column_width=True)
 	st.write("Classifying...")
 	label = predict(filename)
 	st.write('The image is %s with %.2f%% probabiity' % (label[1], label[2]*100))
