@@ -3,7 +3,7 @@
 >Simple VGG16 classifier using Keras and Streamlit
 
 ## Requirements
-Python 3.x with all `requirements.txt` dependencies installed. To install run:
+Python 3.10+ with all `requirements.txt` dependencies installed. To install run:
 
     $ git clone https://github.com/reubenbf/simple-vgg-classifier.git
     $ cd ./simple-vgg-classifier/

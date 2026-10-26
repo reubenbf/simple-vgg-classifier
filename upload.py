@@ -25,7 +25,7 @@ st.write('You selected `%s`' % filename)
 
 if filename:
 	img = Image.open(filename)
-	st.image(img, caption="Your Image", use_column_width=True)
+	st.image(img, caption="Your Image", width="stretch")
 	st.write("Classifying...")
 	label = predict(filename)
 	st.write('The image is %s with %.2f%% probabiity' % (label[1], label[2]*100))

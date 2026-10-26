@@ -3,11 +3,14 @@ from tensorflow.keras.preprocessing.image import img_to_array
 from tensorflow.keras.applications.vgg16 import preprocess_input
 from tensorflow.keras.applications.vgg16 import decode_predictions
 from tensorflow.keras.applications.vgg16 import VGG16
-#import keras.backend.tensorflow_backend as tb
-#tb._SYMBOLIC_SCOPE.value = True
+import streamlit as st
+
+@st.cache_resource
+def load_model():
+    return VGG16()
 
 def predict(upload_img):
-    model = VGG16()
+    model = load_model()
     image = load_img(upload_img, target_size=(224, 224))
     # convert the image pixels to a numpy array
     image = img_to_array(image)
